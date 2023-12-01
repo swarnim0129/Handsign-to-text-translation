@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Language Translator</title>
+    <style>
+        /* Reset some default browser styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* Navbar styling */
+        nav {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .nav-links {
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-right: 15px;
+            display: inline;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .container {
+
+            border: 2px solid #333;
+            border-radius: 10px;
+            margin: 20px;
+            padding: 20px;
+            background: url('https://images.unsplash.com/photo-1604716053460-3f66248bf8de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JhZmZpdGl8ZW58MHx8MHx8fDA%3D&w=1000&q=80') no-repeat center center/cover ;
+
+
+        }
+
+        #cimg {
+            border: 5px solid white;
+            border-radius: 10px;
+            box-shadow: 4px 4px black ;
+        }
+
+        .aside {
+            display: inline;
+            margin-top: 20px;
+            float: left;
+        }
+
+        .container>div>p {
+            font-size: 18px;
+            margin-top: 10px;
+
+        }
+
+        #b1 {
+            background-image: url("https://wallpapercave.com/wp/wp8466784.jpg");
+        }
+
+        .graffiti {
+            width: 100px;
+            height: 100px;
+            background-color: #ff5733;
+            /* You can change the color to your preference */
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            animation: graffitiAnimation 2s linear infinite;
+        }
+    </style>
+</head>
+
+<body id="b1">
+
+    <nav>
+        <div class="logo">
+            <a href="#">Hand Gesture Detection</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container" style="
+       box-shadow: 5px 5px rgb(0, 0, 0);
+">
+
+        <img id="cimg" src="{{ url_for('video_feed') }}" alt="Sign Language Video Feed" width="640" height="480">
+        <img src="" alt="" id="cimg1">
+        <div class="aside">
+            <div id="fontC"
+                style="font-size: 19px; margin-top: 12px;color: whitesmoke;font-weight: bold; text-shadow: 1px 1px black;">
+
+                <p>Sign Language Translator enables the hearing impaired user to communicate efficiently in sign
+                    language,
+                    and the application will translate the same into text/speech. The user has to train the model, by
+                    recording its own sign language gestures. Internally it uses MobileNet and KNN classifier to
+                    classify
+                    the gestures.
+                </p><br>
+                <div>
+                    <p>Detected Character:</p>
+                    <h1>{{ detected_character }}</h1>
+                </div>
+                <p>
+                    A sign language translator project aims to bridge communication gaps between hearing-impaired
+                    individuals and the hearing world. It typically involves using computer vision and machine learning
+                    to
+                    interpret sign language gestures captured by a camera and convert them into spoken or written
+                    language.
+                    This technology has the potential to enhance accessibility and inclusivity for the deaf and hard of
+                    hearing community, making everyday interactions easier. Some popular implementations include devices
+                    or
+                    mobile apps that provide real-time sign language interpretation, empowering individuals with hearing
+                    impairments to communicate more effectively.
+                </p>
+            </div>
+        </div>
+
+</body>
+
+</html>
